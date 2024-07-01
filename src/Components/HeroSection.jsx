@@ -2,13 +2,13 @@ import React from 'react'
 import Navbar from './Navbar'
 const HeroSection = () => {
   return (
-    <section className='herosection' id="herosection">
+    <section className='heroSection' id="herosection">
       <Navbar/>
       <div className='container'>
         <div className='banner'>
           <div  className='largeBox'>
             <h1 className='title'>Delicious</h1>
-          </div>
+          </div> 
           <div className='combined_boxes'>
             <div className='imageBox'>
                 <img src="./hero1.png" alt="hero" />
