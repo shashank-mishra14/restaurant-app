@@ -11,6 +11,153 @@
   display: none;
 }
 
+nav{
+  display: flex;
+  max-width: 1500px;
+  min-width: 1500px;
+  padding: 25px 10px 40px 10px;
+  margin-bottom: 25px;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+nav::after{
+  content:"";
+  position: absolute;
+  height:0.6px;
+  bottom:0;
+  left:0;
+  width:100%;
+  background: rgb(201, 201, 201);
+}
+
+nav .logo{
+  flex:1;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+nav .navLinks{
+  flex:2;
+}
+nav .navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .navLinks .links {
+  display: flex;
+  gap: 25px;
+}
+nav .navLinks .links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1.4px;
+}
+nav .navLinks .links a:hover {
+  color: #222;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+nav .menuBtn{
+  padding: 8px 20px;
+  color:black;
+  background:transparent;
+  border: 1px solid #333;
+  border-radius: 20px;
+  font-size:16px;
+}
+
+nav .menuBtn:hover{
+  background: #222;
+  color:white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+nav .hamburger {
+  display: none;
+}
+nav svg {
+  font-size: 1.75rem;
+}
+
+@media (max-width: 1520px) {
+  nav {
+    min-width: 100%;
+    padding: 25px 20px 40px 20px;
+  }
+}
+@media (max-width: 1100px) {
+  nav {
+    z-index: 20;
+    position: unset;
+    background: #ffffff63;
+    padding: 10px 30px;
+  }
+  nav::after {
+    content: "";
+    display: none;
+  }
+  nav .hamburger {
+    display: flex;
+  }
+  nav .navLinks {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: -100%;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    padding: 15px 7.5px;
+    z-index: -1;
+    transition: 0.3s;
+  }
+  nav .showmenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 67px;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    padding: 15px 7.5px;
+    transition: 0.3s;
+    margin: 0 15px;
+    width: 96.7vw;
+    margin-right: 30px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+  }
+  nav .showmenu .links {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav .menuBtn {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 800px) {
+  nav .showmenu {
+    width: 96vw;
+  }
+}
+@media (max-width: 650px) {
+  nav .showmenu {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
 .heroSection {
   display: flex;
   flex-direction: column;
@@ -613,5 +760,266 @@
   }
   .team .container .team_container .card img {
     width: 150px;
+  }
+}
+
+.reservation {
+  display: flex;
+  min-height: 75vh;
+  padding: 30px 20px;
+  justify-content: center;
+  align-items: center;
+  /* background: url(/reserve.svg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.reservation .container {
+  max-width: 1500px;
+  min-width: 1500px;
+  display: flex;
+}
+.reservation .container .banner {
+  width: 50%;
+  padding: 50px;
+}
+.reservation .container .banner .reservation_form_box {
+  width: 400px;
+  background: #fff;
+  height: 100%;
+  padding: 20px;
+  box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
+  -webkit-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
+  -moz-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
+}
+.reservation .container .banner .reservation_form_box form div {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+.reservation .container .banner .reservation_form_box form div input {
+  flex: 1;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid #333;
+  background: transparent;
+}
+.reservation
+  .container
+  .banner
+  .reservation_form_box
+  form
+  input[type="email"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid #555;
+  background: transparent;
+}
+.reservation
+  .container
+  .banner
+  .reservation_form_box
+  form
+  input[type="number"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 300;
+  border: none;
+  border-bottom: 1px solid #333;
+  background: transparent;
+}
+.reservation .container .banner .reservation_form_box form div input:focus,
+.reservation
+  .container
+  .banner
+  .reservation_form_box
+  form
+  input[type="number"]:focus,
+.reservation
+  .container
+  .banner
+  .reservation_form_box
+  form
+  input[type="email"]:focus {
+  outline: none;
+  border-bottom: 2px solid skyblue;
+}
+.reservation
+  .container
+  .banner
+  .reservation_form_box
+  form
+  div
+  input::placeholder {
+  color: #222;
+}
+.reservation .container .banner .reservation_form_box h1 {
+  font-weight: 200;
+  font-size: 2.75rem;
+  color: #111;
+  text-align: center;
+}
+.reservation .container .banner .reservation_form_box p {
+  color: #333;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.reservation .container .banner:first-child {
+  display: flex;
+  justify-content: center;
+}
+.reservation .container .banner img {
+  width: 550px;
+}
+.reservation .container .banner .reservation_form_box form button {
+  border: 1px solid black;
+  padding: 8px 36px;
+  border-radius: 30px;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 13px;
+  color: #111;
+  background: transparent;
+  margin-top: 30px;
+}
+.reservation .container .banner .reservation_form_box form button span {
+  margin-left: 1rem;
+  padding: 3px;
+  background: #111;
+  border-radius: 100%;
+  color: #fff;
+}
+@media (max-width: 1520px) {
+  .reservation .container {
+    min-width: 100%;
+  }
+}
+@media (max-width: 1040px) {
+  .reservation .container .banner {
+    padding: 20px;
+  }
+}
+@media (max-width: 1350px) {
+  .reservation .container .banner img {
+    width: 42vw;
+  }
+}
+@media (max-width: 885px) {
+  .reservation .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .reservation .container .banner img {
+    width: 70vw;
+  }
+  .reservation .container .banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 660px) {
+  .reservation .container .banner img {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .reservation .container .banner .reservation_form_box {
+    width: 100%;
+  }
+  .reservation .container .banner .reservation_form_box h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 325px) {
+  .reservation .container .banner .reservation_form_box h1 {
+    font-size: 1.6rem;
+  }
+}
+/**********************************************************************************************************************/
+
+/******************* NOT FOUND PAGE STYLING **************/
+/**********************************************************************************************************************/
+.notFound {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  /* background: url(/background.svg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.notFound .container {
+  max-width: 1500px;
+  text-align: center;
+}
+.notFound .container img {
+  margin-bottom: 2rem;
+}
+.notFound .container h1 {
+  font-size: 2.75rem;
+  font-weight: 300;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.notFound .container p {
+  font-size: 18px;
+  font-weight: 300;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+.notFound .container a {
+  border: 1px solid black;
+  padding: 8px 28px;
+  border-radius: 30px;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 15px;
+  color: #111;
+}
+.notFound .container a span {
+  margin-left: 1rem;
+  padding: 6px;
+  background: #111;
+  border-radius: 100%;
+  color: #fff;
+}
+.notFound .container a:hover {
+  color: #fff;
+  background: #111;
+  transition: ease-in-out 0.3s;
+}
+.notFound .container a:hover span {
+  background: #fff;
+  color: #111;
+}
+@media (max-width: 600px) {
+  .notFound {
+    padding: 30px 20px;
+  }
+  .notFound .container img {
+    width: 100%;
+  }
+  .notFound .container h1 {
+    font-size: 1.75rem;
   }
 }
